@@ -14,7 +14,6 @@ while True:
     elif user_input == 'q':
         print("Program Is Terminated...")
         time.sleep(1)
-        break
-        
+        break        
     else:
         print("Please enter a number or 'q' to quit.")
