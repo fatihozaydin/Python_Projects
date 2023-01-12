@@ -2,21 +2,19 @@ import random
 import string
 import time
 
-while True:
+def generate_password(length):
+    letters = string.ascii_letters + string.digits
+    return ''.join(random.choice(letters) for i in range(length))
     
-    def generate_password(length):
-        password_chars = string.ascii_letters + string.digits + string.punctuation
-        password = random.choice(string.ascii_lowercase)
-        password += random.choice(string.ascii_uppercase)
-        password += random.choice(string.digits)
-        password += random.choice(string.punctuation)
-        for i in range(length - 4):
-            password += random.choice(password_chars)
-        password_list = list(password)
-        random.shuffle(password_list)
-        password = ''.join(password_list)
-        return password
-
-    password_length = int(input("Şifre uzunluğunu giriniz : "))
-    print("Oluşturulan rastgele şifre : ",generate_password(password_length))
-    time.sleep(0.5)
+while True:
+    user_input = input("Enter a number to generate a random password or 'q' to quit: ")
+    if user_input.isdigit():
+        password = generate_password(int(user_input))
+        print("Generated password:", password)
+    elif user_input == 'q':
+        print("Program Is Terminated...")
+        time.sleep(1)
+        break
+        
+    else:
+        print("Please enter a number or 'q' to quit.")
