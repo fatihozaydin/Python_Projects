@@ -1,19 +1,19 @@
 
 while True:
 
-    sayı = input("Sayı:")
-    if (sayı == "q"):
-        print("Program Sonlandırıldı...")
+    number = input("Number:")
+    if (number == "q"):
+        print("Program Terminated...")
         break
-    sayı = int(sayı)
+    number = int(number)
     i = 1
-    toplam = 0
-    while (i < sayı):
-        if (sayı % i == 0):
-            toplam += i
+    total = 0
+    while (i < number):
+        if (number % i == 0):
+            total += i
         i += 1
 
-    if (toplam == sayı):
-        print(sayı,"mükemmel bir sayıdır.")
+    if (total == number):
+        print(number,"This Number Is Perfect.")
     else:
-        print(sayı,"mükemmel bir sayı değildir.")
+        print(number,"This Number Isn't Perfect.")
